@@ -1,9 +1,32 @@
 {
-    // Name this configuration
-    "name": "Codespace for Skills!",
-    // Use the base codespace image
-    "image": "mcr.microsoft.com/vscode/devcontainers/universal:latest",
-  
-    "remoteUser": "codespace",
-    "overrideCommand": false
-  }
+  "name": "Data Science Codespace",
+  "image": "mcr.microsoft.com/vscode/devcontainers/python:3.9",
+  "remoteUser": "codespace",
+  "overrideCommand": false,
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-toolsai.jupyter",
+        "ms-toolsai.jupyter-keymap",
+        "ms-toolsai.jupyter-renderers",
+        "eamodio.gitlens",
+        "GitHub.copilot",
+        "GitHub.vscode-pull-request-github",
+        "bierner.markdown-mermaid",
+        "mohd-akram.vscode-html-format",
+        "RandomFractalsInc.vscode-data-preview",
+        "redhat.vscode-yaml",
+        "ms-azuretools.vscode-docker",
+        "ms-vscode-remote.remote-containers",
+        "visualstudioexptteam.vscodeintellicode"
+      ]
+      },
+      "codespaces": {
+          "openFiles": [
+              "codespace.md"
+          ]
+      }
+  },
+  "postCreateCommand": "echo '# Writing code upon codespace creation!'  >> codespace.md"
+}
